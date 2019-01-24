@@ -1,6 +1,6 @@
 # How to type Container with Compose from Recompose ?
 
-Generally, we use `compose` in containers. Containers inject props in components. So it's important to type it correctly to only expose expose properties that developers really need to initialize.
+Generally, we use `compose` in containers. Containers inject props in components. So it's important to type it correctly to only expose properties that developers really need to initialize.
 
 ## 📝 Example
 
