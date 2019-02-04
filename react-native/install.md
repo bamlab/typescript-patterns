@@ -2,7 +2,7 @@
 
 ## New project 👍
 
-Since babel 7 was realised, it supports typescript integration. You just have to run :
+Since babel 7 was released, it supports typescript integration. You just have to run :
 
 ```
 react-native init MyAwesomeProject --template typescript
