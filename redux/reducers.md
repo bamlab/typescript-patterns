@@ -9,7 +9,7 @@ import { AuthActions } from "./actions"
 
 const initialState = {
   loggedIn: false,
-  userJWT: "" as tring
+  userJWT: [] as string // You can type the value directly here instead of in the IAuthState, an empty array cuould be typed e.g. Article[]
 };
 
 const IAuthState = typeof initialState;
