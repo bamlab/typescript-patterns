@@ -5,8 +5,6 @@ Always create a constant value ACTION for the string. Use minimum strings in red
 ## Example
 
 ```typescript
-import { Action, ActionCreator } from "redux";
-
 export const LOGIN = "LOGIN";
 
 // The action name shall be declared only once here! In the reducer, action creator or saga, one should use this constant, not a string to avoid the magic number issue https://en.wikipedia.org/wiki/Magic_number_(programming)
@@ -17,7 +15,7 @@ export interface ILoginPayload {
 }
 
 export interface ILoginAction {
-  type: "LOGIN" | "Croute";
+  type: "LOGIN";
   payload: LoginPayload;
   // Well there is a magic number issue here. We cannot use the const LOGIN because it is not in the type namespace. If we use typeof LOGIN, the type will be string instead of 'LOGIN'. We need the type to be "LOGIN", and not just a string, so in our reducer when we do the switch case, the IDE will know the form of the payload.
 }
