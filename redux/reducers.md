@@ -5,20 +5,21 @@ Previously on [typescript-patterns]('./actions.md').
 ## Example
 
 ```typescript
-import { AuthActions } from "./actions"
+import { AuthActions, LOGIN_SUCCESS } from "./actions";
 
 const initialState = {
   loggedIn: false,
-  userJWT: [] as string // You can type the value directly here instead of in the IAuthState, an empty array cuould be typed e.g. Article[]
+  hasLoginError: false,
+  userJWT: [] as string[] // You can type the value directly here instead of in the IAuthState, an empty array cuould be typed e.g. Article[]
 };
 
-const IAuthState = typeof initialState;
+export type IAuthState = typeof initialState;
 
-const reducer
-(
+export const reducer = (
   state = initialState,
   action: AuthActions
-): IAuthState {switch (action.type) {
+): IAuthState => {
+  switch (action.type) {
     case LOGIN_SUCCESS:
       return {
         ...state,
@@ -26,5 +27,7 @@ const reducer
         hasLoginError: false
       };
     default:
-      return state;}
+      return state;
+  }
+};
 ```
