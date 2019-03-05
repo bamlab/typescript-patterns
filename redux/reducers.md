@@ -9,7 +9,8 @@ import { AuthActions } from "./actions"
 
 const initialState = {
   loggedIn: false,
-  userJWT: [] as string // You can type the value directly here instead of in the IAuthState, an empty array cuould be typed e.g. Article[]
+  userJWT: [] as string, // You can type the value directly here instead of in the IAuthState, an empty array cuould be typed e.g. Article[]
+  complexObject: undefined as ComplexObject | undefined // You can specify the future type of a state property
 };
 
 const IAuthState = typeof initialState;
