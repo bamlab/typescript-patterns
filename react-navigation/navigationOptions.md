@@ -28,4 +28,46 @@ export class PickItem extends React.Component<Props> {
 }
 ```
 
-## Usin
+## Using Navigation params
+
+When your navigation option takes a parameter, here is the way to type it:
+
+```ts
+interface Props {
+  binUid: string;
+}
+
+// These params will depend only on this page
+interface NavigationParams {
+  displayModal: () => void;
+}
+
+export class PickItem extends React.Component<Props> {
+  static navigationOptions = ({
+    navigation
+  }: NavigationScreenProps<NavigationParams>) => {
+    return {
+      title: "Pick Item",
+      headerLeft: (
+        <HeaderStopButton onPress={navigation.getParam("displayModal")} />
+      )
+    };
+  };
+
+  componentDidMount = () => {
+    this.props.navigation.setParams({ displayModal: this.displayModal });
+  };
+
+  displayModal = () => {
+    Alert.alert("Alert");
+  };
+
+  public render() {
+    return (
+      <View>
+        <Text>BinUid : {this.props.binUid}</Text>
+      </View>
+    );
+  }
+}
+```
